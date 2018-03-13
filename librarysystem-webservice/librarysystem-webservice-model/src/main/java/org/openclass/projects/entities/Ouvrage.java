@@ -27,6 +27,11 @@ public class Ouvrage implements Serializable{
 	
 	private int idouvrage;
 
+	public Ouvrage(int idouvrage) {
+		super();
+		this.idouvrage = idouvrage;
+	}
+
 	public Ouvrage(String titre, String langue, String domaine, String editeur, String auteur, Date datepublication,
 			String isbn, int nbpages, int nbtotal, int nbrestant, int idouvrage) {
 		super();

@@ -10,7 +10,7 @@ import src.main.java.org.openclass.projects.entities.Ouvrage;
 @Repository
 public interface OuvrageDao {
     
-    void delete(int idouvrage);
+    void delete(Ouvrage ouvrage);
     
     Ouvrage getById(int idouvrage);
     
