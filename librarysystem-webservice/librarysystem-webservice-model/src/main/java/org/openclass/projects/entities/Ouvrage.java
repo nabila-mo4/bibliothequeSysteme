@@ -1,7 +1,8 @@
 package src.main.java.org.openclass.projects.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+
 
 public class Ouvrage implements Serializable{
 	
@@ -12,8 +13,6 @@ public class Ouvrage implements Serializable{
 	private String domaine;
 	
 	private String editeur;
-	
-	private String auteur;
 	
 	private Date datepublication;
 	
@@ -32,14 +31,14 @@ public class Ouvrage implements Serializable{
 		this.idouvrage = idouvrage;
 	}
 
-	public Ouvrage(String titre, String langue, String domaine, String editeur, String auteur, Date datepublication,
+	public Ouvrage(String titre, String langue, String domaine, String editeur, Date datepublication,
 			String isbn, int nbpages, int nbtotal, int nbrestant, int idouvrage) {
 		super();
 		this.titre = titre;
 		this.langue = langue;
 		this.domaine = domaine;
 		this.editeur = editeur;
-		this.auteur = auteur;
+		
 		this.datepublication = datepublication;
 		this.isbn = isbn;
 		this.nbpages = nbpages;
@@ -82,14 +81,6 @@ public class Ouvrage implements Serializable{
 
 	public void setEditeur(String editeur) {
 		this.editeur = editeur;
-	}
-
-	public String getAuteur() {
-		return auteur;
-	}
-
-	public void setAuteur(String auteur) {
-		this.auteur = auteur;
 	}
 
 	public Date getDatepublication() {

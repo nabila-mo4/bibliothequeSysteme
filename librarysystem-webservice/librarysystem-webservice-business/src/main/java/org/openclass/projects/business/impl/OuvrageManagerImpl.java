@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Set;
 
 import org.openclass.projects.business.contract.OuvrageManager;
 import org.openclass.projects.consumer.contract.OuvrageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import src.main.java.org.openclass.projects.conversion.contract.ConversionFactory;
 import src.main.java.org.openclass.projects.dto.OuvrageDTO;
 import src.main.java.org.openclass.projects.entities.Ouvrage;
 
@@ -17,21 +19,37 @@ import src.main.java.org.openclass.projects.entities.Ouvrage;
 
 public class OuvrageManagerImpl implements OuvrageManager {
 	
+	
+	private ConversionFactory conversionFactory;
+	
+	
+	public ConversionFactory getConversionFactory() {
+		return conversionFactory;
+	}
+
+
+
+	public void setConversionFactory(ConversionFactory conversionFactory) {
+		this.conversionFactory = conversionFactory;
+	}
+
+
 	@Autowired
 	OuvrageDao ouvrageDao;
 	
 	@Override
 	public void create(OuvrageDTO ouvrage) {
-		Ouvrage ouvrageEntity= getChangeFactory().getOuvrageChange().toOuvrageEntity(ouvrage, true, Ouvrage.class.getSimpleName());
+		Ouvrage ouvrageEntity= getConversionFactory().getOuvrageConversion().toOuvrageEntity(ouvrage, true, Ouvrage.class.getSimpleName());
 		ouvrageDao.create(ouvrageEntity);
 		
 	}
 	
-	
+
+
 	@Override
 	public void delete(OuvrageDTO ouvrage) {
 		
-		Ouvrage ouvrageEntity= getChangeFactory().getOuvrageChange().toOuvrageEntity(ouvrage, true, Ouvrage.class.getSimpleName());
+		Ouvrage ouvrageEntity= getConversionFactory().getOuvrageConversion().toOuvrageEntity(ouvrage, true, Ouvrage.class.getSimpleName());
 		ouvrageDao.delete(ouvrageEntity);
 		
 	}
@@ -41,7 +59,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
 		
 		Ouvrage ouvrage = ouvrageDao.getById(id);
 		OuvrageDTO ouvrageDTO = new OuvrageDTO();
-		ouvrageDTO = getChangeFactory().getOuvrageChange().toOuvrageDTO(ouvrage, true, OuvrageDTO.getClass().getName());
+		ouvrageDTO = getConversionFactory().getOuvrageConversion().toOuvrageDTO(ouvrage, true, ouvrageDTO.getClass().getName());
 	    return ouvrageDTO;
 	}
 
@@ -53,7 +71,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
 		{
 			
 			OuvrageDTO ouvrageDTO = new OuvrageDTO();
-			ouvrageDTO = getChangeFactory().getOuvrageChange().toOuvrageDTO(ouvrage, true, ouvrageDTO.getClass().getName());
+			ouvrageDTO = getConversionFactory().getOuvrageConversion().toOuvrageDTO(ouvrage, true, ouvrageDTO.getClass().getName());
 			ouvragesDTO.add(ouvrageDTO);
 		}
 		
@@ -64,7 +82,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
 	@Override
 	public void update(OuvrageDTO ouvrage) {
 		
-		Ouvrage ouvrageEntity= getChangeFactory().getOuvrageChange().toOuvrageEntity(ouvrage, true, Ouvrage.class.getSimpleName());
+		Ouvrage ouvrageEntity= getConversionFactory().getOuvrageConversion().toOuvrageEntity(ouvrage, true, Ouvrage.class.getSimpleName());
 		ouvrageDao.create(ouvrageEntity);
 		
 	}
@@ -75,7 +93,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
 		
         String sqlStatement = "SELECT * FROM ouvrage WHERE";
 		List<String> sqlCriterias= new ArrayList<String>();
-        List<Ouvrage> ouvragesEntities = new ArrayList<Ouvrage>();
+        //Set<Ouvrage> ouvragesEntities = new ArrayList<Ouvrage>();
         
         Enumeration enumCriteria = criterias.keys();
 		while (enumCriteria.hasMoreElements())
@@ -91,12 +109,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
 				
 				
 				
-			if(criterias.containsKey("ouvrage-auteur") && key.equals("ouvrage-auteur") && !criterias.get(key).equals(""))
-            {
-                String ouvrageAuteur = (String) criterias.get(key);
-                String ouvrageAuteurCap = ouvrageAuteur.substring(0, 1).toUpperCase() + ouvrageAuteur.toLowerCase().substring(1);
-                sqlCriterias.add(" (auteur LIKE '%"+ouvrageAuteur+"%' OR auteur LIKE '%"+ouvrageAuteur.toLowerCase()+"%' OR auteur LIKE '%"+ouvrageAuteur.toUpperCase()+"%' OR auteur LIKE '%"+ouvrageAuteurCap+"%')") ;
-            }
+		
 			
 			if(criterias.containsKey("site-isbn") && key.equals("site-isbn") && !criterias.get(key).equals(""))
             {
@@ -126,7 +139,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
             System.out.println(sqlCriteria);
         }
 		
-		ouvragesEntities =ouvrageDao.findAllBySearchCriteria(sqlStatement);
+		Set<Ouvrage> ouvragesEntities =ouvrageDao.findAllBySearchCriteria(sqlStatement);
 		
 		
 			
@@ -135,7 +148,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
 		List<OuvrageDTO> ouvrages = new ArrayList<>();
 		if(ouvrages!=null && ouvragesEntities.size()!=0)
 		{
-			ouvrages.addAll(getChangeFactory().getOuvrageChange().toOuvragesDTO(ouvragesEntities,true, "org.openclass.projects.dto.OuvrageDTO"));
+			ouvrages.addAll(getConversionFactory().getOuvrageConversion().toOuvragesDTO(ouvragesEntities,true, "org.openclass.projects.dto.OuvrageDTO"));
 		}
 		return ouvrages;
 	

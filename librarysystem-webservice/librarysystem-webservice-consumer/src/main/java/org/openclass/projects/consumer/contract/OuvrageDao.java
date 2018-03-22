@@ -2,6 +2,7 @@ package org.openclass.projects.consumer.contract;
 
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +17,7 @@ public interface OuvrageDao {
     
     void update(Ouvrage ouvrage);
     
-    List<Ouvrage> findAllBySearchCriteria(String sqlStatement);
+    Set <Ouvrage> findAllBySearchCriteria(String sqlStatement);
 	
 	
 	void create(Ouvrage ouvrage);

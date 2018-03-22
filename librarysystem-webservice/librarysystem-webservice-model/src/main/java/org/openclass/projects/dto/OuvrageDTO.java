@@ -8,7 +8,7 @@ public class OuvrageDTO {
 	private String langue;
 	private String domaine;
 	private String editeur;
-	private String auteur;
+	
 	private Date datepublication;
 	private String isbn;
 	private int nbpages;
@@ -39,12 +39,7 @@ public class OuvrageDTO {
 	public void setEditeur(String editeur) {
 		this.editeur = editeur;
 	}
-	public String getAuteur() {
-		return auteur;
-	}
-	public void setAuteur(String auteur) {
-		this.auteur = auteur;
-	}
+	
 	public Date getDatepublication() {
 		return datepublication;
 	}

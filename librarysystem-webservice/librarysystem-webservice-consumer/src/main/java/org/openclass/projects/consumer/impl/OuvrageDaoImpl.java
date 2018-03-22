@@ -3,6 +3,8 @@ package org.openclass.projects.consumer.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Set;
+
 import org.openclass.projects.consumer.contract.OuvrageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -34,7 +36,7 @@ public class OuvrageDaoImpl implements OuvrageDao {
 		
 	}
 
-	@Override
+	@Override 
 	public Ouvrage getById(int idouvrage)  {
 		String sql="SELECT * FROM ouvrage WHERE idouvrage=:idouvrage";
 		return namedParameterJdbcTemplate.queryForObject(sql, getSqlParameterByModel(new Ouvrage(idouvrage)), new OuvrageMapper());
@@ -42,22 +44,23 @@ public class OuvrageDaoImpl implements OuvrageDao {
 
 	@Override 
 	public void update(Ouvrage ouvrage) {
-		String sql="UPDATE ouvrage SET titre=:titre, langue=:langue, domaine=:domaine, editeur=:editeur, auteur=:auteur, datepublication=:datepublication,"
+		String sql="UPDATE ouvrage SET titre=:titre, langue=:langue, domaine=:domaine, editeur=:editeur, datepublication=:datepublication,"
 				+ "isbn=:isbn, nbpages=:nbpages,nbtotal=:nbtotal, nbrestant=:nbrestant WHERE idouvrage=:idouvrage";
 		namedParameterJdbcTemplate.update(sql, getSqlParameterByModel(ouvrage));
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Ouvrage> findAllBySearchCriteria(String sqlStatement) {
-		List<Ouvrage> list= namedParameterJdbcTemplate.query(sqlStatement, getSqlParameterByModel(null), new OuvrageMapper());
+	public Set<Ouvrage> findAllBySearchCriteria(String sqlStatement) {
+		Set<Ouvrage> list= (Set<Ouvrage>) namedParameterJdbcTemplate.query(sqlStatement, getSqlParameterByModel(null), new OuvrageMapper());
         return list;
 	}
 
 	@Override
 	public void create(Ouvrage ouvrage) {
-		String sql="INSERT INTO ouvrage (titre,langue,domaine,editeur,auteur,datepublication,isbn,nbpages,nbtotal,nbrestant)"
-				+ " VALUES (:titre,:langue,:domaine,:editeur,:auteur,:datepublication,:isbn,:nbpages,:nbtotal,:nbrestant)";
+		String sql="INSERT INTO ouvrage (titre,langue,domaine,editeur,datepublication,isbn,nbpages,nbtotal,nbrestant)"
+				+ " VALUES (:titre,:langue,:domaine,:editeur,:datepublication,:isbn,:nbpages,:nbtotal,:nbrestant)";
         
 		namedParameterJdbcTemplate.update(sql, getSqlParameterByModel(ouvrage));
 		
@@ -80,7 +83,7 @@ public class OuvrageDaoImpl implements OuvrageDao {
 			paramSource.addValue("langue",ouvrage.getLangue());
 			paramSource.addValue("domaine",ouvrage.getDomaine());
 			paramSource.addValue("editeur",ouvrage.getEditeur());
-			paramSource.addValue("auteur",ouvrage.getAuteur());
+			
 			paramSource.addValue("datepublication",ouvrage.getDatepublication());
 			paramSource.addValue("isbn", ouvrage.getIsbn());
 			paramSource.addValue("nbpages", ouvrage.getNbpages());
@@ -101,7 +104,7 @@ public class OuvrageDaoImpl implements OuvrageDao {
 			ouvrage.setEditeur(rs.getString("editeur"));
 			ouvrage.setDomaine(rs.getString("domaine"));
 			ouvrage.setDatepublication(rs.getDate("datepublication"));
-			ouvrage.setAuteur(rs.getString("auteur"));
+			
 			ouvrage.setIsbn(rs.getString("isbn"));
 			ouvrage.setNbpages(rs.getInt("nbpages"));
 			ouvrage.setNbrestant(rs.getInt("nbrestant"));
