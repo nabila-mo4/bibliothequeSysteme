@@ -118,6 +118,7 @@ public class EmpruntDaoImpl implements EmpruntDao{
 			paramSource.addValue("datedebut", emprunt.getDatedebut());
 			paramSource.addValue("datefin", emprunt.getDatefin());
 			paramSource.addValue("dateretour", emprunt.getDateretour());
+			paramSource.addValue("prolonge",emprunt.getProlonge());
 		    paramSource.addValue("idouvrage", emprunt.getOuvrage().getIdouvrage());
 		    paramSource.addValue("idutilisateur", emprunt.getUtilisateur().getIdutilisateur());
 		    

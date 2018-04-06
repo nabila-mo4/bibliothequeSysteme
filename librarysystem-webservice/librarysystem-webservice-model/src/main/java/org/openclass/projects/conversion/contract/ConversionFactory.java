@@ -10,6 +10,11 @@ public interface ConversionFactory {
 	
 	EmpruntConversion getEmpruntConversion();
 	void setEmpruntConversion(EmpruntConversion empruntConversion);
+	
+
+	UtilisateurConversion getUtilisateurConversion();
+	void setUtilisateurConversion(UtilisateurConversion utilisateurConversion);
+	
 	/*CitizenshipTransformer getCitizenshipTransformer();
 	void setCitizenshipTransformer(CitizenshipTransformer citizenshipTransformer);
 	MagazineTransformer getMagazineTransformer();
