@@ -8,15 +8,15 @@ import src.main.java.org.openclass.projects.dto.OuvrageDTO;
 public interface OuvrageManager 
 {
 	
-	void create(OuvrageDTO Ouvrage);
+	void create(OuvrageDTO ouvrage);
     
-    void delete(OuvrageDTO Ouvrage);
+    void delete(OuvrageDTO ouvrage);
     
     OuvrageDTO getById(int id);
     
     List<OuvrageDTO> list();
     
-    void update(OuvrageDTO Ouvrage);
+    void update(OuvrageDTO ouvrage);
     
     List<OuvrageDTO> search(Hashtable criterias);
 

@@ -4,11 +4,13 @@ public interface ConversionFactory {
 	
 	OuvrageConversion getOuvrageConversion();
 	void setOuvrageConversion(OuvrageConversion ouvrageConversion);
-	/*AuthorTransformer getAuthorTransformer();
-	void setAuthorTransformer(AuthorTransformer authorTransformer);
-	BorrowTransformer getBorrowTransformer();
-	void setBorrowTransformer(BorrowTransformer borrowTransformer);
-	CitizenshipTransformer getCitizenshipTransformer();
+	
+	AuteurConversion getAuteurConversion();
+	void setAuteurConversion(AuteurConversion auteurConversion);
+	
+	EmpruntConversion getEmpruntConversion();
+	void setEmpruntConversion(EmpruntConversion empruntConversion);
+	/*CitizenshipTransformer getCitizenshipTransformer();
 	void setCitizenshipTransformer(CitizenshipTransformer citizenshipTransformer);
 	MagazineTransformer getMagazineTransformer();
 	void setMagazineTransformer(MagazineTransformer magazineTransformer);

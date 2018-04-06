@@ -2,6 +2,8 @@ package src.main.java.org.openclass.projects.dto;
 
 import java.util.Date;
 
+import src.main.java.org.openclass.projects.entities.Auteur;
+
 public class OuvrageDTO {
 
 	private String titre;
@@ -15,6 +17,13 @@ public class OuvrageDTO {
 	private int nbtotal;
 	private int nbrestant;
 	private int idouvrage;
+	private Auteur auteur;
+	public Auteur getAuteur() {
+		return auteur;
+	}
+	public void setAuteur(Auteur auteur) {
+		this.auteur = auteur;
+	}
 	public String getTitre() {
 		return titre;
 	}

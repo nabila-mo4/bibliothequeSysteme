@@ -25,6 +25,16 @@ public class Ouvrage implements Serializable{
 	private int nbrestant;
 	
 	private int idouvrage;
+	
+	private Auteur auteur;
+
+	public Auteur getAuteur() {
+		return auteur;
+	}
+
+	public void setAuteur(Auteur auteur) {
+		this.auteur = auteur;
+	}
 
 	public Ouvrage(int idouvrage) {
 		super();

@@ -111,11 +111,11 @@ public class OuvrageManagerImpl implements OuvrageManager {
 				
 		
 			
-			if(criterias.containsKey("site-isbn") && key.equals("site-isbn") && !criterias.get(key).equals(""))
+			if(criterias.containsKey("ouvrage-isbn") && key.equals("ouvrage-isbn") && !criterias.get(key).equals(""))
             {
-                String siteIsbn = (String) criterias.get(key);
-                String siteIsbnCap = siteIsbn.substring(0, 1).toUpperCase() + siteIsbn.toLowerCase().substring(1);
-                sqlCriterias.add(" (isbn LIKE '%"+siteIsbn+"%' OR isbn LIKE '%"+siteIsbn.toLowerCase()+"%' OR i LIKE '%"+siteIsbn.toUpperCase()+"%' OR emplacement LIKE '%"+siteIsbnCap+"%')") ;
+                String ouvrageIsbn = (String) criterias.get(key);
+                String ouvrageIsbnCap = ouvrageIsbn.substring(0, 1).toUpperCase() +ouvrageIsbn.toLowerCase().substring(1);
+                sqlCriterias.add(" (isbn LIKE '%"+ouvrageIsbn+"%' OR isbn LIKE '%"+ouvrageIsbn.toLowerCase()+"%' OR isbn LIKE '%"+ouvrageIsbn.toUpperCase()+"%' OR isbn LIKE '%"+ouvrageIsbnCap+"%')") ;
             }
 			
 			if(criterias.containsKey("ouvrage-editeur") && key.equals("ouvrage-editeur") && !criterias.get(key).equals(""))
@@ -143,7 +143,7 @@ public class OuvrageManagerImpl implements OuvrageManager {
 		
 		
 			
-		if (ouvragesEntities.isEmpty()) {System.out.println("pas de sites");}
+		if (ouvragesEntities.isEmpty()) {System.out.println("pas d'ouvrages");}
 		
 		List<OuvrageDTO> ouvrages = new ArrayList<>();
 		if(ouvrages!=null && ouvragesEntities.size()!=0)
