@@ -15,15 +15,6 @@ public interface ConversionFactory {
 	UtilisateurConversion getUtilisateurConversion();
 	void setUtilisateurConversion(UtilisateurConversion utilisateurConversion);
 	
-	/*CitizenshipTransformer getCitizenshipTransformer();
-	void setCitizenshipTransformer(CitizenshipTransformer citizenshipTransformer);
-	MagazineTransformer getMagazineTransformer();
-	void setMagazineTransformer(MagazineTransformer magazineTransformer);
-	UserLightTransformer getUserLightTransformer();
-	void setUserLightTransformer(UserLightTransformer userLightTransformer);
-	ImageTransformer getImageTransformer();
-	void setImageTransformer(ImageTransformer imageTransformer);
-	UserAccountTransformer getUserAccountTransformer();
-	void setUserAccountTransformer(UserAccountTransformer userAccountTransformer);*/
+	
 
 }
