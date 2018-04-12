@@ -37,5 +37,6 @@
 	<classpathentry kind="lib" path="C:/Users/nmokadmi/Downloads/spring-dao-2.0.8.jar/spring-dao-2.0.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nmokadmi/Downloads/org.springframework.core-3.1.0.release.jar/org.springframework.core-3.1.0.release.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nmokadmi/Downloads/javax.persistence_2.0.0.jar/javax.persistence_2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nmokadmi/Downloads/javax.servlet-3.0.jar/javax.servlet-3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

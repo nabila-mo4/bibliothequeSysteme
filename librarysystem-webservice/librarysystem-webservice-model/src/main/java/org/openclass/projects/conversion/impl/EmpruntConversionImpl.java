@@ -8,8 +8,10 @@ import java.util.HashSet;
 import src.main.java.org.openclass.projects.conversion.contract.EmpruntConversion;
 
 import src.main.java.org.openclass.projects.conversion.contract.OuvrageConversion;
+import src.main.java.org.openclass.projects.conversion.contract.UtilisateurConversion;
 import src.main.java.org.openclass.projects.dto.EmpruntDTO;
 import src.main.java.org.openclass.projects.entities.Auteur;
+import src.main.java.org.openclass.projects.entities.Emprunt;
 import src.main.java.org.openclass.projects.entities.Ouvrage;
 
 public class EmpruntConversionImpl implements EmpruntConversion {

@@ -1,4 +1,4 @@
-package src.main.java.org.openclass.projects.webservice;
+package src.main.java.org.openclass.projects.servicesweb;
 
 import java.util.List;
 
