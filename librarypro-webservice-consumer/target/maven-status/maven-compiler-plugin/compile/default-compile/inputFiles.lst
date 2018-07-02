@@ -1,0 +1,10 @@
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\contract\dao\AuteurDao.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\contract\dao\OuvrageDao.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\impl\dao\AuteurDaoImpl.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\impl\dao\OuvrageDaoImpl.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\contract\dao\EmpruntDao.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\impl\dao\EmpruntDaoImpl.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\impl\dao\UtilisateurDaoImpl.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\contract\DaoFactory.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\contract\dao\UtilisateurDao.java
+C:\eclipse-workspace\librarypro-webservice\librarypro-webservice-consumer\src\main\java\org\librarypro\webservice\consumer\impl\FactoryDaoImpl.java

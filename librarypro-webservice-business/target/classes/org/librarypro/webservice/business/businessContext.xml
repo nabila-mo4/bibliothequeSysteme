@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	
+	
+	<bean id="abstractManager" abstract="true">
+		 <property name="daoFc" ref="daoFactory"/>
+		 <property name="convfac" ref="conversionFactory"/>	
+	</bean>
+	
+	<bean id="ouvrageManager" class ="org.librarypro.webservice.business.impl.manager.OuvrageManagerImpl" parent="abstractManager"/>
+	<bean id="auteurManager" class ="org.librarypro.webservice.business.impl.manager.AuteurManagerImpl" parent="abstractManager"/>
+    <bean id="empruntManager" class ="org.librarypro.webservice.business.impl.manager.EmpruntManagerImpl" parent="abstractManager"/>
+	<bean id="utilisateurManager" class ="org.librarypro.webservice.business.impl.manager.UtilisateurManagerImpl" parent="abstractManager"/>
+	
+	
+	<bean id="managerFactory" class ="org.librarypro.webservice.business.impl.ManagerFactoryImpl">
+		
+		  <property name="ouvrageManager" ref="ouvrageManager"/>
+		  <property name="auteurManager" ref="auteurManager"/>
+		  <property name="empruntManager" ref="empruntManager"/>
+		  <property name="utilisateurManager" ref="utilisateurManager"/>
+		
+	</bean>
+	
+	
+	
+	<context:component-scan base-package="org.librarypro.webservice.business.impl.manager" />
+</beans>

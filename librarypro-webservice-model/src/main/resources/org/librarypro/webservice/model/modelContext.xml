@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:repo="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+	 
+	 
+	 <bean id="auteurConversion" class="org.librarypro.webservice.model.conversion.impl.AuteurConversionImpl"/>
+	 <bean id="ouvrageConversion" class="org.librarypro.webservice.model.conversion.impl.OuvrageConversionImpl"/>
+	 <bean id="empruntConversion" class="org.librarypro.webservice.model.conversion.impl.EmpruntConversionImpl"/>
+	 <bean id="utilisateurConversion" class="org.librarypro.webservice.model.conversion.impl.UtilisateurConversionImpl"/>
+	
+	 <bean id="conversionFactory" class="org.librarypro.webservice.model.conversion.impl.ConversionFactoryImpl">
+	 	<property name="auteurConversion" ref="auteurConversion"/>
+	 	<property name="ouvrageConversion" ref="ouvrageConversion"/>
+	 	<property name="empruntConversion" ref="empruntConversion"/>
+	 	<property name="utilisateurConversion" ref="utilisateurConversion"/>
+	 	
+	 </bean>
+	 
+	 
+</beans>
