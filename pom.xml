@@ -118,6 +118,8 @@
     <module>librarypro-webservice-business</module>
     <module>librarypro-webservice-consumer</module>
     <module>librarypro-webservice-prod</module>
+    <module>production</module>
+    <module>producnabila</module>
   </modules>
   
   

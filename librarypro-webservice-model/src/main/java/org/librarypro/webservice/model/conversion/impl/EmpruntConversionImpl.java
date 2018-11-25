@@ -62,6 +62,13 @@ public class EmpruntConversionImpl  implements EmpruntConversion {
 			e.setIdutilisateur(emprunt.getIdutilisateur());
 		}
 		
+		
+		
+		if(emprunt.getIdouvrage()!=0)
+		{
+			e.setIdouvrage(emprunt.getIdouvrage());
+		}
+		
 		return e;
 	}
 
@@ -125,6 +132,11 @@ public class EmpruntConversionImpl  implements EmpruntConversion {
 			if(emprunt.getIdutilisateur()!=0)
 			{
 				e.setIdutilisateur(emprunt.getIdutilisateur());
+			}
+			
+			if(emprunt.getIdouvrage()!=0)
+			{
+				e.setIdouvrage(emprunt.getIdouvrage());
 			}
 			
 			

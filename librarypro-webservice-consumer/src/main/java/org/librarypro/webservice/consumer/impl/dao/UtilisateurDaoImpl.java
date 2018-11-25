@@ -31,7 +31,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao{
  
 	public List<Utilisateur> list() {
 		String sql ="SELECT * FROM utilisateur";
-		List<Utilisateur> list = namedParameterJdbcTemplate.query(sql, getSqlParameterByModel(null), new UtilisateurMapper());
+		List <Utilisateur> list = namedParameterJdbcTemplate.query(sql, getSqlParameterByModel(null), new UtilisateurMapper());
 		return list;
 	}
 

@@ -7,7 +7,7 @@ import org.librarypro.webservice.model.dto.AuteurDTO;
 
 public interface AuteurManager {
 	
-    void create(AuteurDTO auteur);
+    void  create(AuteurDTO auteur);
     
     void delete(AuteurDTO auteur);
     

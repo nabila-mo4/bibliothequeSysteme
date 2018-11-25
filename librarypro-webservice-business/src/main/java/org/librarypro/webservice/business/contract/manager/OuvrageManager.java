@@ -7,7 +7,7 @@ import org.librarypro.webservice.model.dto.OuvrageDTO;
 
 public interface OuvrageManager {
 	
-	OuvrageDTO getById(int id);
+	 OuvrageDTO getById(int id);
 	
     void create(OuvrageDTO ouvrage);
     

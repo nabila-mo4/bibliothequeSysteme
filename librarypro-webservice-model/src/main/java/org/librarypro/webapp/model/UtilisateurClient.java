@@ -39,21 +39,6 @@ public interface UtilisateurClient {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns org.librarypro.webapp.model.UtilisateurDTO
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUtilisateurByEmail", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetUtilisateurByEmail")
-    @ResponseWrapper(localName = "getUtilisateurByEmailResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetUtilisateurByEmailResponse")
-    @Action(input = "model.webapp.librarypro.org/UtilisateurClient/getUtilisateurByEmailRequest", output = "model.webapp.librarypro.org/UtilisateurClient/getUtilisateurByEmailResponse")
-    public UtilisateurDTO getUtilisateurByEmail(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -69,5 +54,20 @@ public interface UtilisateurClient {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.librarypro.webapp.model.UtilisateurDTO
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUtilisateurByEmail", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetUtilisateurByEmail")
+    @ResponseWrapper(localName = "getUtilisateurByEmailResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetUtilisateurByEmailResponse")
+    @Action(input = "model.webapp.librarypro.org/UtilisateurClient/getUtilisateurByEmailRequest", output = "model.webapp.librarypro.org/UtilisateurClient/getUtilisateurByEmailResponse")
+    public UtilisateurDTO getUtilisateurByEmail(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
 }

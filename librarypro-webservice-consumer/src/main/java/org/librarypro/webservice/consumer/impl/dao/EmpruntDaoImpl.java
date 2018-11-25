@@ -19,7 +19,6 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 public class EmpruntDaoImpl implements EmpruntDao {
 	
-	private static  Date datefin;
  
 	@Autowired
 	NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -32,16 +31,35 @@ public class EmpruntDaoImpl implements EmpruntDao {
 
 	
 	public void prolonger(int idemprunt) {
+		System.out.println("nabila");
 		
-		String sql="UPDATE emprunt SET dateretour=:datefin WHERE idemprunt=:idemprunt";
-		
-		List<Emprunt> prets= list();
-		for(Emprunt e: prets) { 
+		String sql="UPDATE emprunt SET datedebut=:datedebut,encours=:encours,idutilisateur=:idutilisateur,idouvrage=:idouvrage,dateretour=:dateretour, prolonge=:prolonge WHERE idemprunt=:idemprunt";
+		//getempruntbyid
+		Emprunt emp=new Emprunt();
+		List <Emprunt> prets= list();
+		for(Emprunt e: prets) {  
 			if(e.getIdemprunt()==idemprunt) {
-				datefin=e.getDateretour();
+				emp.setDateretour(e.getDateretour());
+				emp.setIdouvrage(e.getIdouvrage());
+				emp.setIdutilisateur(e.getIdutilisateur());
+				//dateretour=e.getDateretour();
 			}
 		}
-		namedParameterJdbcTemplate.update(sql, getSqlParameterByModeltwo(new Emprunt(idemprunt)));
+		System.out.println("nabila");
+	//	System.out.println(dateretour);
+		
+		namedParameterJdbcTemplate.update(sql, getSqlParameterByModeltwo(emp));
+		
+	}
+	
+	
+	public void prolonge(Emprunt e) {
+		System.out.println("nabila");
+		
+		String sql="UPDATE emprunt SET datedebut=:datedebut,encours=:encours,idutilisateur=:idutilisateur,idouvrage=:idouvrage,dateretour=:dateretour, prolonge=:prolonge WHERE idemprunt=:idemprunt";
+		
+		
+		namedParameterJdbcTemplate.update(sql, getSqlParameterByModeltwo(e));
 		
 	}
 	
@@ -111,12 +129,19 @@ public class EmpruntDaoImpl implements EmpruntDao {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource ();
 		if(emprunt !=null) {
 			paramSource.addValue("idemprunt", emprunt.getIdemprunt());
+			paramSource.addValue("datedebut", emprunt.getDatedebut());
+			paramSource.addValue("encours", emprunt.getEncours());
 			
+			paramSource.addValue("idouvrage", emprunt.getOuvrage().getIdouvrage());
+			paramSource.addValue("idutilisateur", 2);
+			paramSource.addValue("prolonge", true);
 			
-			Date nvdate = DateUtils.addMonths(datefin,1);
+			Date nvdate = DateUtils.addMonths(emprunt.getDateretour(),1);
 			
 			paramSource.addValue("dateretour",nvdate);
+			System.out.println(nvdate);
 			
+			//System.out.println(dateretour);
 		
 		}
 		return paramSource;

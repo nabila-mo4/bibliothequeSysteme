@@ -12,7 +12,7 @@ import org.librarypro.webservice.model.entities.Auteur;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuteurManagerImpl extends AbstractManagerImpl implements AuteurManager {
+public class  AuteurManagerImpl extends AbstractManagerImpl implements AuteurManager {
 	
 	public void create(AuteurDTO auteur) {
 		Auteur auteurEntity= getConvfac().getAuteurConversion().toAuteurEntity(auteur, true, Auteur.class.getSimpleName());

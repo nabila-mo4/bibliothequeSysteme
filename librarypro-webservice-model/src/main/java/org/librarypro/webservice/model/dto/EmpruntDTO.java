@@ -14,6 +14,15 @@ public class EmpruntDTO {
 	public void setIdutilisateur(int idutilisateur) {
 		this.idutilisateur = idutilisateur;
 	}
+	
+	private int idouvrage;
+	
+	public int getIdouvrage() {
+		return idouvrage;
+	}
+	public void setIdouvrage(int idouvrage) {
+		this.idouvrage = idouvrage;
+	}
 	public EmpruntDTO(UtilisateurDTO utilisateurDTO) {
 		super();
 		this.utilisateurDTO = utilisateurDTO;

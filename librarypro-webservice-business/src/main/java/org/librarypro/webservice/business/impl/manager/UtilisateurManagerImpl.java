@@ -11,7 +11,7 @@ import org.librarypro.webservice.model.entities.Utilisateur;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UtilisateurManagerImpl extends AbstractManagerImpl implements UtilisateurManager {
+public class  UtilisateurManagerImpl extends AbstractManagerImpl implements UtilisateurManager {
 
 	
 	public List<UtilisateurDTO> list() {

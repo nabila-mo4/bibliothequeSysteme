@@ -17,6 +17,13 @@ public class EmpruntManagerImpl extends AbstractManagerImpl  implements EmpruntM
 	public void prolonger(int idemprunt) {
 		getDaoFc().getEmpruntDao().prolonger(idemprunt);
 	}
+	
+	public String prolonge(EmpruntDTO e) {
+		Emprunt e1=getConvfac().getEmpruntConversion().toEmpruntEntity(e, true, Emprunt.class.getSimpleName());
+		
+		getDaoFc().getEmpruntDao().prolonge(e1);
+		return "c fait";
+	}
 
 	public List<EmpruntDTO> empruntsEnCours() {
 		List<Emprunt> emprunts = getDaoFc().getEmpruntDao().empruntsEnCours();

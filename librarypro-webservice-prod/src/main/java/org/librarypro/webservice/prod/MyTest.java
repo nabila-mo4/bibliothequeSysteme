@@ -56,14 +56,18 @@ public class MyTest {
         ouvrage.setNbtotal(56);
         ouvrage.setTitre("effffffffffff");
         managerFactory.getOuvrageManager().create(ouvrage);*/
+        System.out.println("nabila");
         
-        
-        List<OuvrageDTO> o = managerFactory.getOuvrageManager().searchAuteur("yg");
+        /*List<OuvrageDTO> o = managerFactory.getOuvrageManager().searchAuteur("yg");
         for(OuvrageDTO ouvrage:o) {
-        System.out.println(ouvrage.getIsbn());
+        System.out.println(ouvrage.getIsbn());*/
+        
+       managerFactory.getEmpruntManager().prolonger(5);
+        System.out.println("n");
+        
         }
         
         
                 
     }
-}
+

@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "OuvrageService", targetNamespace = "model.webapp.librarypro.org", wsdlLocation = "http://lfr023539:8080/librarypro-webservice-interface3743289649675734671/OuvrageService?wsdl")
+@WebServiceClient(name = "OuvrageService", targetNamespace = "model.webapp.librarypro.org", wsdlLocation = "http://lfr023539:5050/librarypro-webservice-interface7091102566841682789//OuvrageService?wsdl")
 public class OuvrageService
     extends Service
 {
@@ -30,7 +30,7 @@ public class OuvrageService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://lfr023539:8080/librarypro-webservice-interface3743289649675734671/OuvrageService?wsdl");
+            url = new URL("http://lfr023539:5050/librarypro-webservice-interface7091102566841682789//OuvrageService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

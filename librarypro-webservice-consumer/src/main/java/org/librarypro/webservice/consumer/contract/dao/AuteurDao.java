@@ -11,7 +11,7 @@ public interface AuteurDao {
 	
     void delete(Auteur auteur);
     
-    Auteur getById(int idauteur);
+     Auteur getById(int idauteur);
     
     void update(Auteur auteur);
     

@@ -31,7 +31,7 @@ public class OuvrageDaoImpl implements OuvrageDao{
 
 	
 
-	public Ouvrage getById(int idouvrage)  {
+	public  Ouvrage getById(int idouvrage)  {
 		String sql="SELECT ouvrage.* FROM ouvrage  WHERE idouvrage=:idouvrage";
 		return namedParameterJdbcTemplate.queryForObject(sql, getSqlParameterByModel(new Ouvrage(idouvrage)), new OuvrageMapper());
 	}

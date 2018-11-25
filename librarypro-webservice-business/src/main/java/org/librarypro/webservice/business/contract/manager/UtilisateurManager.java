@@ -8,7 +8,7 @@ public interface UtilisateurManager {
 	
 	
 	
-		List<UtilisateurDTO> list();
+		 List<UtilisateurDTO> list();
 	    boolean valid(String email, String mdp);
 	   
 	    UtilisateurDTO utilisateursparmail(String email);

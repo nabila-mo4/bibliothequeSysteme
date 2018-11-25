@@ -77,6 +77,21 @@ public interface OuvrageClient {
      * 
      * @param arg0
      * @return
+     *     returns org.librarypro.webapp.model.OuvrageDTO
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBook", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetBook")
+    @ResponseWrapper(localName = "getBookResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetBookResponse")
+    @Action(input = "model.webapp.librarypro.org/OuvrageClient/getBookRequest", output = "model.webapp.librarypro.org/OuvrageClient/getBookResponse")
+    public OuvrageDTO getBook(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
      *     returns java.util.List<org.librarypro.webapp.model.OuvrageDTO>
      */
     @WebMethod
@@ -102,20 +117,5 @@ public interface OuvrageClient {
     public List<OuvrageDTO> getOuvrageByTitre(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns org.librarypro.webapp.model.OuvrageDTO
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBook", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetBook")
-    @ResponseWrapper(localName = "getBookResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.GetBookResponse")
-    @Action(input = "model.webapp.librarypro.org/OuvrageClient/getBookRequest", output = "model.webapp.librarypro.org/OuvrageClient/getBookResponse")
-    public OuvrageDTO getBook(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
 
 }

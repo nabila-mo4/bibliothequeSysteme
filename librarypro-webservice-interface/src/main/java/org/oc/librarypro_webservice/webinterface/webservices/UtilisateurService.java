@@ -12,9 +12,9 @@ import org.oc.librarypro_webservice.webinterface.AbstractService;
 public class UtilisateurService extends AbstractService {
 	
 	@WebMethod
-	public List<UtilisateurDTO> users() { 
+	public List <UtilisateurDTO> users() { 
 
-		List<UtilisateurDTO> list = getManagerFactory().getUtilisateurManager().list();
+		List <UtilisateurDTO> list = getManagerFactory().getUtilisateurManager().list();
 
 		return list;
 	}

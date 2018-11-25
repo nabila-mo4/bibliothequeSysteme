@@ -24,7 +24,7 @@ public class AuteurDaoImpl implements AuteurDao {
 	}
 	
 	
-	public void delete(Auteur auteur) {
+	public void  delete (Auteur auteur) {
 		String sql ="DELETE FROM auteur WHERE idauteur=:idauteur";
 		namedParameterJdbcTemplate.update(sql, getSqlParameterByModel(auteur));
 		

@@ -8,7 +8,7 @@ public interface OuvrageDao {
 	
 	Ouvrage getById(int idouvrage);
 	
-    void create(Ouvrage ouvrage);
+    void create( Ouvrage ouvrage);
     
     void delete(Ouvrage ouvrage);
     

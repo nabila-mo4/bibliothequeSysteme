@@ -22,6 +22,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="dateretour" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="encours" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="idemprunt" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="idouvrage" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idutilisateur" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="ouvrageDTO" type="{model.webapp.librarypro.org}ouvrageDTO" minOccurs="0"/>
  *         &lt;element name="prolonge" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
@@ -40,6 +41,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "dateretour",
     "encours",
     "idemprunt",
+    "idouvrage",
     "idutilisateur",
     "ouvrageDTO",
     "prolonge",
@@ -53,6 +55,7 @@ public class EmpruntDTO {
     protected XMLGregorianCalendar dateretour;
     protected Boolean encours;
     protected int idemprunt;
+    protected int idouvrage;
     protected int idutilisateur;
     protected OuvrageDTO ouvrageDTO;
     protected Boolean prolonge;
@@ -144,6 +147,22 @@ public class EmpruntDTO {
      */
     public void setIdemprunt(int value) {
         this.idemprunt = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété idouvrage.
+     * 
+     */
+    public int getIdouvrage() {
+        return idouvrage;
+    }
+
+    /**
+     * Définit la valeur de la propriété idouvrage.
+     * 
+     */
+    public void setIdouvrage(int value) {
+        this.idouvrage = value;
     }
 
     /**

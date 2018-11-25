@@ -51,18 +51,39 @@ public interface EmpruntClient {
 
     /**
      * 
+     */
+    @WebMethod
+    @RequestWrapper(localName = "print", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.Print")
+    @ResponseWrapper(localName = "printResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.PrintResponse")
+    @Action(input = "model.webapp.librarypro.org/EmpruntClient/printRequest", output = "model.webapp.librarypro.org/EmpruntClient/printResponse")
+    public void print();
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "prolonger", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.Prolonger")
+    @ResponseWrapper(localName = "prolongerResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.ProlongerResponse")
+    @Action(input = "model.webapp.librarypro.org/EmpruntClient/prolongerRequest", output = "model.webapp.librarypro.org/EmpruntClient/prolongerResponse")
+    public void prolonger(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
      * @param arg0
      * @return
-     *     returns java.util.List<org.librarypro.webapp.model.EmpruntDTO>
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "empruntsByUtilisateur", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.EmpruntsByUtilisateur")
-    @ResponseWrapper(localName = "empruntsByUtilisateurResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.EmpruntsByUtilisateurResponse")
-    @Action(input = "model.webapp.librarypro.org/EmpruntClient/empruntsByUtilisateurRequest", output = "model.webapp.librarypro.org/EmpruntClient/empruntsByUtilisateurResponse")
-    public List<EmpruntDTO> empruntsByUtilisateur(
+    @RequestWrapper(localName = "prolonge", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.Prolonge")
+    @ResponseWrapper(localName = "prolongeResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.ProlongeResponse")
+    @Action(input = "model.webapp.librarypro.org/EmpruntClient/prolongeRequest", output = "model.webapp.librarypro.org/EmpruntClient/prolongeResponse")
+    public String prolonge(
         @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+        EmpruntDTO arg0);
 
     /**
      * 
@@ -79,12 +100,15 @@ public interface EmpruntClient {
     /**
      * 
      * @param arg0
+     * @return
+     *     returns java.util.List<org.librarypro.webapp.model.EmpruntDTO>
      */
     @WebMethod
-    @RequestWrapper(localName = "prolonger", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.Prolonger")
-    @ResponseWrapper(localName = "prolongerResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.ProlongerResponse")
-    @Action(input = "model.webapp.librarypro.org/EmpruntClient/prolongerRequest", output = "model.webapp.librarypro.org/EmpruntClient/prolongerResponse")
-    public void prolonger(
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "empruntsByUtilisateur", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.EmpruntsByUtilisateur")
+    @ResponseWrapper(localName = "empruntsByUtilisateurResponse", targetNamespace = "model.webapp.librarypro.org", className = "org.librarypro.webapp.model.EmpruntsByUtilisateurResponse")
+    @Action(input = "model.webapp.librarypro.org/EmpruntClient/empruntsByUtilisateurRequest", output = "model.webapp.librarypro.org/EmpruntClient/empruntsByUtilisateurResponse")
+    public List<EmpruntDTO> empruntsByUtilisateur(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 

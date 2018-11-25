@@ -8,6 +8,8 @@ public interface EmpruntDao {
 	
 	void prolonger(int idemprunt);
 	
+	void prolonge(Emprunt e);
+	
 	List<Emprunt> empruntsEnCours();
 	
 	List<Emprunt> list();

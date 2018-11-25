@@ -7,7 +7,7 @@ import org.librarypro.webservice.model.conversion.contract.ConversionFactory;
 public class AbstractManagerImpl implements AbstractManager {
 	
 	private DaoFactory daoFc;
-	private ConversionFactory convfac; 
+	private  ConversionFactory convfac; 
 	
 	
 

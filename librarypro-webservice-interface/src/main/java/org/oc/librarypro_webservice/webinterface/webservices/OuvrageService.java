@@ -15,7 +15,7 @@ import org.oc.librarypro_webservice.webinterface.AbstractService;
 public class OuvrageService extends AbstractService{
 
 	@WebMethod
-	public OuvrageDTO getBook(Integer id)
+	public  OuvrageDTO getBook(Integer id)
 	{
 		return getManagerFactory().getOuvrageManager().getById(id);
 	}
